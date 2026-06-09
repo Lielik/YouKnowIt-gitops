@@ -1,0 +1,38 @@
+.
+├── argocd
+│   ├── apps
+│   │   ├── app-of-apps.yaml
+│   │   ├── cert-manager.yaml
+│   │   ├── external-secrets.yaml
+│   │   ├── ingress-nginx.yaml
+│   │   ├── logging-config.yaml
+│   │   ├── loki-app.yaml
+│   │   ├── monitoring-config.yaml
+│   │   ├── prometheus-stack.yaml
+│   │   └── youknowit.yaml
+│   └── bootstrap
+│       └── argocd-values.yaml
+├── charts
+│   └── youknowit
+│       ├── Chart.yaml
+│       ├── templates
+│       │   ├── clusterissuer.yaml
+│       │   ├── clustersecretstore.yaml
+│       │   ├── configmap.yaml
+│       │   ├── deployment.yaml
+│       │   ├── externalsecret.yaml
+│       │   ├── ingress.yaml
+│       │   ├── serviceaccount.yaml
+│       │   └── service.yaml
+│       └── values.yaml
+├── file_structure.txt
+└── platform
+    ├── logging
+    │   └── loki-serviceaccount.yaml
+    └── monitoring
+        ├── alertmanager-external-secret.yaml
+        ├── grafana-dashboards.yaml
+        ├── grafana-external-secret.yaml
+        └── loki-datasource.yaml
+
+10 directories, 26 files

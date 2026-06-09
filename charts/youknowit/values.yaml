@@ -1,0 +1,64 @@
+# Container image
+image:
+  repository: 515214871063.dkr.ecr.us-east-1.amazonaws.com/youknowit/app
+  tag: "1.0.0"
+  pullPolicy: IfNotPresent
+
+# Number of pod replicas
+replicaCount: 2
+
+# Kubernetes ServiceAccount (IRSA)
+serviceAccount:
+  name: youknowit
+  roleArn: ""
+
+# Non-secret environment variables
+config:
+  appName: "You Know It"
+  debug: "false"
+  accessTokenExpireMinutes: "1440"
+
+# External Secrets Operator
+externalSecrets:
+  secretStoreName: youknowit-secret-store
+  awsRegion: us-east-1
+  refreshInterval: 1h
+  remoteRefs:
+    secretKey: youknowit/dev/app
+    databaseUrl: youknowit/dev/database-url
+
+# Kubernetes Service
+service:
+  port: 8000
+
+# Ingress
+ingress:
+  hostname: ""
+  tlsSecret: youknowit-tls
+
+# cert-manager
+certManager:
+  email: "your@email.com"
+  clusterIssuer: letsencrypt-staging
+  acmeServer: https://acme-staging-v02.api.letsencrypt.org/directory
+
+# Resource requests and limits
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
+
+# Liveness probe — kills and restarts the pod if the app is frozen
+livenessProbe:
+  path: /health
+  initialDelaySeconds: 10
+  periodSeconds: 30
+
+# Readiness probe — removes the pod from the load balancer if it can't serve traffic
+readinessProbe:
+  path: /health
+  initialDelaySeconds: 5
+  periodSeconds: 10
