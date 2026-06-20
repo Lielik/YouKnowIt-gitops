@@ -25,7 +25,7 @@ spec:
             replication_factor: 1
           schemaConfig:
             configs:
-              - from: "2026-01-01"
+              - from: "2026-05-21"
                 store: tsdb
                 object_store: s3
                 schema: v13
@@ -58,6 +58,14 @@ spec:
           replicas: 0
         write:
           replicas: 0
+        lokiCanary:
+          enabled: false
+        chunksCache:
+          enabled: false
+        resultsCache:
+          enabled: false
+        test:
+          enabled: false
 
   destination:
     server: https://kubernetes.default.svc
