@@ -21,7 +21,7 @@ spec:
           persistence:
             enabled: true
             type: sts
-            storageClassName: gp2
+            storageClassName: ebs-csi-gp3
             accessModes:
               - ReadWriteOnce
             size: 5Gi
