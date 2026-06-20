@@ -10,7 +10,6 @@ replicaCount: 2
 # Kubernetes ServiceAccount (IRSA)
 serviceAccount:
   name: youknowit
-  roleArn: ""
 
 # Non-secret environment variables
 config:
