@@ -33,12 +33,12 @@ service:
 
 # Ingress
 ingress:
-  hostname: ""
+  hostname: "youknowit.ddns.net"
   tlsSecret: youknowit-tls
 
 # cert-manager
 certManager:
-  email: "your@email.com"
+  email: "liel.frank@gmail.com"
   clusterIssuer: letsencrypt-staging
   acmeServer: https://acme-staging-v02.api.letsencrypt.org/directory
 
