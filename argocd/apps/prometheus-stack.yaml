@@ -55,6 +55,7 @@ spec:
               repeat_interval: 12h
               receiver: slack
             receivers:
+              - name: "null"
               - name: slack
                 slack_configs:
                   - api_url_file: /etc/alertmanager/secrets/alertmanager-slack-secret/webhook-url
