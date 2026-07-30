@@ -1,7 +1,7 @@
 # Container image
 image:
   repository: 515214871063.dkr.ecr.us-east-1.amazonaws.com/youknowit/app
-  tag: "v0.0.4"
+  tag: "v0.0.5"
   pullPolicy: IfNotPresent
 
 # Number of pod replicas
